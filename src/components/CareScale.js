@@ -2,22 +2,13 @@ import sun from '../assets/sun.svg'
 import water from '../assets/water.svg'
 
 function handleClick({scaleValue, careType}) {
-	let sentence = 'Cette plante requiert '
-	switch (scaleValue) {
-		case 1:
-		  sentence = sentence.concat('peu ')
-		  break;
-		case 2:
-		  sentence = sentence.concat('modérement ')
-		  break;
-		case 3:
-		  sentence = sentence.concat('beaucoup ')
-		  break;
-		default:
-		  sentence = sentence.concat('')
+	const quantityLabel = {
+		1: 'peu',
+		2: 'modérément',
+		3: 'beaucoup'
 	}
 	const scaleType = careType === 'light' ? 'de lumière' : 'd\'arrosage'
-	alert(sentence.concat(scaleType))
+	alert(`Cette plante requiert ${quantityLabel[scaleValue]} ${scaleType}`)
 }
 
 function CareScale({ scaleValue, careType }) {
