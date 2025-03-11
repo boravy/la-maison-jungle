@@ -3,10 +3,8 @@ import '../styles/Cart.css'
 
 function Cart({ cart, updateCart }) {
 	const [isOpen, setIsOpen] = useState(true)
-	const total = cart.reduce(
-		(acc, plantType) => acc + plantType.amount * plantType.price,
-		0
-	)
+	const total = cart.reduce((acc, plantType) => acc + plantType.amount * plantType.price, 0)
+    
 	return isOpen ? (
 		<div className='lmj-cart'>
 			<button
